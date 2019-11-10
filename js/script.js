@@ -122,7 +122,7 @@ function one() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "lightgreen";
+    topLeft.style.backgroundColor = " none";
 }
 
 function two() {
@@ -154,7 +154,7 @@ function four() {
 
 // this function makes all the colors revert back to its original color.
 function clearColor() {
-    topLeft.style.backgroundColor = "darkgreen";  
+    topLeft.style.fill = "#EBE423";  
     topRight.style.backgroundColor = "darkred";
     bottomLeft.style.backgroundColor = "goldenrod";
     bottomRight.style.backgroundColor = "darkblue";
@@ -162,7 +162,7 @@ function clearColor() {
 
 // flash color to lighter. this is what causes the boxes to appear as they are blinking.
 function flashColor() {
-    topLeft.style.backgroundColor = "lightgreen";  
+    topLeft.style.fill = "#e6e15d";  
     topRight.style.backgroundColor = "tomato";
     bottomLeft.style.backgroundColor = "yellow";
     bottomRight.style.backgroundColor = "lightskyblue";
