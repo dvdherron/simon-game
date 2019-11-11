@@ -24,38 +24,49 @@
 
 <body>
   <main>
-      <svg id="topleft" width="206" height="268" viewBox="0 0 206 268" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <section id="game--pads">
+      <svg id="topleft" class="pad" width="206" height="268" viewBox="0 0 206 268" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M206 133.641C118 197.641 262.71 267.141 170.203 267.141C77.6951 267.141 0 223.17 0 143.641C0 64.1121 33.1621 69 101 0C196.162 50 206 54.1121 206 133.641Z"/>
         </svg>
-        
     
-      <svg id="topright" width="236" height="278" viewBox="0 0 236 278" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M235.178 29.4261C234.354 105.361 173.606 218.269 104.83 245.024C-102.462 361.281 106.333 106.532 2.21962 70.4001C3.04387 -5.53462 57.1247 60.4954 106.827 61.0349C156.53 61.5744 236.002 -46.5086 235.178 29.4261Z" fill="#FD856F"/>
+      <svg id="topright" class="pad" width="236" height="278" viewBox="0 0 236 278" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M235.178 29.4261C234.354 105.361 173.606 218.269 104.83 245.024C-102.462 361.281 106.333 106.532 2.21962 70.4001C3.04387 -5.53462 57.1247 60.4954 106.827 61.0349C156.53 61.5744 236.002 -46.5086 235.178 29.4261Z"/>
         </svg>
 
-      <svg id="bottomleft" width="385" height="401" viewBox="0 0 385 401" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M239.455 386.531C206.578 444.71 196.601 257.432 138.421 224.555C80.2418 191.678 74.5117 138.275 107.389 80.0959C140.266 21.9163 208.086 31.326 266.265 64.2032C324.445 97.0804 272.332 328.351 239.455 386.531Z" fill="#004E64"/>
+      <svg id="bottomleft" class="pad" width="385" height="401" viewBox="0 0 385 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M239.455 386.531C206.578 444.71 196.601 257.432 138.421 224.555C80.2418 191.678 74.5117 138.275 107.389 80.0959C140.266 21.9163 208.086 31.326 266.265 64.2032C324.445 97.0804 272.332 328.351 239.455 386.531Z"/>
         </svg>
     
-      <svg id="bottomright" width="195" height="261" viewBox="0 0 195 261" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M123 134C123 209.939 198.939 260.5 123 260.5C47.0608 260.5 0 188.939 0 113C0 37.0608 94.0608 0 170 0C245.939 0 123 58.0608 123 134Z" fill="#1EB07F"/>
+      <svg id="bottomright" class="pad" width="195" height="261" viewBox="0 0 195 261" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M123 134C123 209.939 198.939 260.5 123 260.5C47.0608 260.5 0 188.939 0 113C0 37.0608 94.0608 0 170 0C245.939 0 123 58.0608 123 134Z"/>
         </svg>
+    </section>
   
-    <div id="inner-circle">
-      <div id="title" class="font-effect-emboss">simon</div>
+    <section id="inner-circle">
+      <h1 id="title" class="font-effect-emboss">
+        simon
+      </h1>
       <div id="switches">
         <input type="checkbox" class="toggle" id="on">
-        <button class="button" id="start">start</button>
+        <button class="button" id="start">
+          start
+        </button>
         <input type="checkbox" class="toggle" id="strict">
       </div>
+
       <div class="text1">
-        <span>POWER</span><span>STRICT</span>
+        <span>
+          POWER
+        </span>
+        <span>
+          STRICT
+        </span>
       </div>
       <div id="turn"></div>
       <div class="text2">
         COUNT
       </div>
-    </div>
+    </section>
   </main>
 
   <script  src="js/script.js"></script>
