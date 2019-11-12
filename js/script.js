@@ -1,5 +1,5 @@
 let order = []; // randomly generated list/array by the computer.
-let playerOrder = []; // order that the player is pessing the light in
+let playerOrder = []; // order that the player is pessing the pffffff in
 let flash; // integer. Number of flashes that have appeared in the game
 let turn; // keep track of what turn we are on
 let good; // boolean. wheter the player is doing good or not.
@@ -13,10 +13,11 @@ let win; // tells u if u win the game
 // querySelector lets you take any CSS element and inject it in to your js code.
 // here we are creating variables that will be shortcut for their value.
 const turnCounter = document.querySelector("#turn");
-const topLeft = document.querySelector("#topleft");
-const topRight = document.querySelector("#topright");
-const bottomLeft = document.querySelector("#bottomleft");
-const bottomRight = document.querySelector("#bottomright");
+const padOne = document.querySelector("#pad--one");
+
+const padTwo = document.querySelector("#pad--two");
+const padThree = document.querySelector("#pad--three");
+const padFour = document.querySelector("#pad--four");
 const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
@@ -72,7 +73,7 @@ function play() {
     intervalId = 0;
     turn = 1;
     turnCounter.innerHTML = 1;
-    // good checks if you missed any  lights. 
+    // good checks if you missed any  pffffffs. 
     good = true;
 
     // heres where the sequence is generated.
@@ -83,7 +84,7 @@ function play() {
     }
     // compTurn checks if its the computers turn or the users turn.
     compTurn = true;
-    // makes light flash every 0.8 seconds.
+    // makes pffffff flash every 0.8 seconds.
     // see setInterval() function below.
     intervalId = setInterval(gameTurn, 800);
 }
@@ -122,9 +123,7 @@ function one() {
         audio.play();
     }
     noise = true;
-    topLeft.style.fill = "black";
-    topLeft.style.strokeWidth = '5';
-    topLeft.style.stroke = '#004E64';
+    padOne.style.fill = "var(--TL-flash)";
 }
 
 function two() {
@@ -133,7 +132,7 @@ function two() {
         audio.play();
     }
     noise = true;
-    topRight.style.backgroundColor = "tomato";
+    padTwo.style.fill = "var(--TR-flash)";
 }
 
 function three() {
@@ -142,7 +141,7 @@ function three() {
         audio.play();
     }
     noise = true;
-    bottomLeft.style.backgroundColor = "yellow";
+    padThree.style.fill = "var(--BL-flash)";
 }
 
 function four() {
@@ -151,29 +150,27 @@ function four() {
         audio.play();
     }
     noise = true;
-    bottomRight.style.backgroundColor = "lightskyblue";
+    padFour.style.fill = "var(--BR-flash)";
 }
 
 // this function makes all the colors revert back to its original color.
 function clearColor() {
-    topLeft.style.fill = "#EBE423";  
-    topLeft.style.strokeWidth = 'none';
-    topLeft.style.stroke = 'none';
-    topRight.style.backgroundColor = "darkred";
-    bottomLeft.style.backgroundColor = "goldenrod";
-    bottomRight.style.backgroundColor = "darkblue";
+  padOne.style.fill = "var(--TL-color)";  
+  padTwo.style.fill = "var(--TR-color";
+  padThree.style.fill = "var(--BL-color)";
+  padFour.style.fill = "var(--BR-color)";
 }
 
-// flash color to lighter. this is what causes the boxes to appear as they are blinking.
+// flash color to pffffffer. this is what causes the boxes to appear as they are blinking.
 function flashColor() {
-    topLeft.style.fill = "#e6e15d";  
-    topRight.style.backgroundColor = "tomato";
-    bottomLeft.style.backgroundColor = "yellow";
-    bottomRight.style.backgroundColor = "lightskyblue";
+  padOne.style.fill = "var(--TL-flash)";  
+  padTwo.style.fill = "var(--TR-flash)";
+  padThree.style.fill = "var(--BL-flash)";
+  padFour.style.fill = "var(--BR-flash)";
 }
 
 // player clickable stuff
-topLeft.addEventListener('click', (event) => {
+padOne.addEventListener('click', (event) => {
     if (on) {
         // playerOrder.push adds the user interaction to the array.
         playerOrder.push(1);
@@ -189,7 +186,7 @@ topLeft.addEventListener('click', (event) => {
     }
 })
 
-topRight.addEventListener('click', (event) => {
+padTwo.addEventListener('click', (event) => {
     if (on) {
         // playerOrder.push adds the user interaction to the array.
         playerOrder.push(2);
@@ -205,7 +202,7 @@ topRight.addEventListener('click', (event) => {
     }
 })
 
-bottomLeft.addEventListener('click', (event) => {
+padThree.addEventListener('click', (event) => {
     if (on) {
         // playerOrder.push adds the user interaction to the array.
         playerOrder.push(3);
@@ -221,7 +218,7 @@ bottomLeft.addEventListener('click', (event) => {
     }
 })
 
-bottomRight.addEventListener('click', (event) => {
+padFour.addEventListener('click', (event) => {
     if (on) {
         // playerOrder.push adds the user interaction to the array.
         playerOrder.push(4);
