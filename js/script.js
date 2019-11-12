@@ -122,7 +122,9 @@ function one() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = " none";
+    topLeft.style.fill = "black";
+    topLeft.style.strokeWidth = '5';
+    topLeft.style.stroke = '#004E64';
 }
 
 function two() {
@@ -155,6 +157,8 @@ function four() {
 // this function makes all the colors revert back to its original color.
 function clearColor() {
     topLeft.style.fill = "#EBE423";  
+    topLeft.style.strokeWidth = 'none';
+    topLeft.style.stroke = 'none';
     topRight.style.backgroundColor = "darkred";
     bottomLeft.style.backgroundColor = "goldenrod";
     bottomRight.style.backgroundColor = "darkblue";
