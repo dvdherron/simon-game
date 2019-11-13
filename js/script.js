@@ -193,6 +193,13 @@ function flashColor() {
   padFour.style.fill = "var(--BR-flash)";
 }
 
+function loseColor() {
+    padOne.style.fill = "red";  
+    padTwo.style.fill = "red";
+    padThree.style.fill = "red";
+    padFour.style.fill = "red";
+  }
+
 // player clickable stuff
 padOne.addEventListener('click', (event) => {
     if (on) {
@@ -270,7 +277,7 @@ function check() {
     
     // If you miss, do this.
     if (good == false) {
-        flashColor();
+        loseColor();
         turnCounter.innerHTML = "xxx";
         setTimeout(() => {
             turnCounter.innerHTML = turn;
