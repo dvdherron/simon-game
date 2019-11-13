@@ -1,23 +1,125 @@
+
+:root {
+  font-size: 16px; 
+  --TL-color: #00851d;
+  --TL-flash: #59994d;
+  --TR-color: #62018c;
+  --TR-flash: #894b94;
+  --BL-color: #910029;
+  --BL-flash: #914954;
+  --BR-flash: #499187;
+  --BR-color: #00916a;
+}
+
+html {
+  background-color: #191a1b;
+  color: white;
+  scrollbar-width: thin;
+  scrollbar-color:  white #191a1b;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
 body {
-    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/nasty_fabric.png)
-  }
+  min-height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 5%;
+  overflow-x: hidden;
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+main {
   
-  .toggle {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+}
+
+#title--game {
+  font-family: 'Helvetica', cursive;
+  font-size: 2.7em;
+  line-height: 0.9em;
+  letter-spacing: -0.052em;
+  font-weight: 800;
+  text-align: center;
+}
+
+#game--pads {
+  margin: 4rem 2rem;
+  display: grid;
+  grid-template-columns: max-content minmax(5ch, 6ch) max-content;
+  grid-template-rows: max-content minmax(3ch, 4ch) max-content;
+  gap: 0.5rem;
+  justify-content: center;
+  /* height: 100vh; */
+}
+
+.pad {
+ width: 30vmin;
+ height: auto;
+ /* stroke: black;
+ stroke-width: 8; */
+}
+
+.controls--game {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Helvetica', cursive;
   
-  .button {
+}
+  
+  .controls--game__btn {
     font-size: 1.5em;
-    background-color: lightgray;
+    background: #5c5151;
+    color: #ffebeb;
+    height: 50px;
+    border: none;
   }
   
-  #switches {
-    position: absolute;
-    font-family: 'Helvetica', cursive;
-    margin-left: 26px;
-    margin-top: 110px;
-  }
+ 
   
   .text2 {
     position: absolute;
@@ -37,30 +139,23 @@ body {
     padding-left: 70px;
   }
   
-  #title {
-    font-family: 'Helvetica', cursive;
-    position: absolute;
-    font-size: 40px;
-    margin-left: 60px;
-    margin-top: 40px;
-  }
   
   #turn {
-    position: absolute;
-    background: #330000;
-    color: red;
+    grid-column: 2;
+    grid-row: 2;
+    background: #888181;
+    color: #ffebeb;
     font-family: courier;
     font-size: 20px;
     height: 30px;
-    width: 50px;
-    margin-left: 90px;
-    margin-top: 170px;
+    width: auto;
+    border-radius: 1ch;
+    font-weight: 900;
     text-align: center;
     vertical-align: middle;
-    line-height: 30px;
   }
   
-  #outer-circle {
+  /* #outer-circle {
     background: #385a94;
     height: 500px;
     width: 500px;
@@ -69,65 +164,57 @@ body {
     border-width: 10px;
     margin: auto;
     margin-top: 60px;
+  } */
+  
+  svg:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #pad--one {
+    fill: var(--TL-color);
   }
   
-  #topleft {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    background: darkgreen;
-    top: 48.1%;
-    left: 48.5%;
-    margin: -250px 0px 0px -250px;
-    border-style: solid;
-    border-width: 5px;
+  svg:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  #pad--two {
+    fill: var(--TR-color);
   }
   
-  #topright {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    background: darkred;
-    top: 48.5%;
-    left: 50%;
-    margin: -250px 0px 0px 0px;
-    border-style: solid;
-    border-width: 5px;
+  svg:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #pad--three {
+    fill: var(--BL-color);
   }
   
-  #bottomleft {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    background: goldenrod;
-    top: 50%;
-    left: 48.1%;
-    margin: 0px -250px 0px -250px;
-    border-style: solid;
-    border-width: 5px;
+  svg:nth-of-type(4) {
+    grid-column: 3;
+    grid-row: 3;
   }
   
-  #bottomright {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    background: darkblue;
-    top: 50%;
-    left: 50%;
-    margin: 0px 0px -250px 0px;
-    border-style: solid;
-    border-width: 5px;
+  #pad--four {
+    fill: var(--BR-color);
   }
+
   
   #inner-circle {
-    position: absolute;
+    /* position: absolute; */
     background: grey;
     height: 250px;
     width: 250px;
     border-style: solid;
     border-width: 10px;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    margin: -125px 0px 0px -125px;
+    margin: -125px 0px 0px -125px; */
   }
   
+  .strictMode {
+    display: none;
+  }
