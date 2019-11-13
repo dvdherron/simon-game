@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Simon Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -23,28 +23,95 @@
 </head>
 
 <body>
+  <main>
+    <h1 id="title--game"> follow the leader </h1>
+    <section id="game--pads">
 
-  <div id="outer-circle">
-    <div id="topleft"></div>
-    <div id="topright"></div>
-    <div id="bottomleft"></div>
-    <div id="bottomright"></div>
-    <div id="inner-circle">
-      <div id="title" class="font-effect-emboss">simon</div>
-      <div id="switches">
-        <input type="checkbox" class="toggle" id="on">
-        <button class="button" id="start">start</button>
-        <input type="checkbox" class="toggle" id="strict">
+      <div id="turn">--</div>
+
+      <svg id="topleft" class="pad" width="214" height="276" viewBox="0 0 214 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+        <path id="pad--one"  d="M210 133.641C122 197.641 266.71 267.141 174.203 267.141C81.6951 267.141 4 223.17 4 143.641C4 64.1121 37.1621 69 105 0C200.162 50 210 54.1121 210 133.641Z" fill="#c6af0b"/>
+        </g>
+        <defs>
+        <filter id="filter0_d" x="0" y="0" width="214" height="275.141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
+
+        <svg class="pad" width="221" height="280" viewBox="0 0 221 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d)">
+          <path id="pad--two" d="M211.868 26.1958C213.279 99.9777 162.462 211.325 102.077 239.208C-78.9207 357.844 99.5039 104.642 5.92864 72.4133C4.51787 -1.36862 54.4587 61.2799 98.6588 60.4347C142.859 59.5896 210.457 -47.5861 211.868 26.1958Z" fill="#FD856F"/>
+          </g>
+          <defs>
+          <filter id="filter0_d" x="0.620697" y="0.0559387" width="219.854" height="279.044" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+          </filter>
+          </defs>
+          </svg>
+          
+        
+          <svg class="pad" width="215" height="275" viewBox="0 0 215 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+            <path id="pad--three" d="M158.545 267C120.137 267 134.59 189.264 86.3762 160.242C38.1625 131.22 -40.588 138.821 36.0191 54.8662C112.626 -29.0889 194.59 -6.63181 207.447 54.8662C220.304 116.364 196.954 267 158.545 267Z" fill="#004E64"/>
+            </g>
+            <defs>
+            <filter id="filter0_d" x="0" y="0" width="215" height="275" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            </defs>
+            </svg>
+            
+
+        <svg class="pad" width="215" height="275" viewBox="0 0 215 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d)">
+          <path id="pad--four" d="M134.727 137.344C134.727 215.178 215.437 267 134.727 267C54.0172 267 4 193.654 4 115.82C4 37.9856 103.97 0 184.679 0C265.389 0 134.727 59.5096 134.727 137.344Z" fill="#1EB07F"/>
+          </g>
+          <defs>
+          <filter id="filter0_d" x="0" y="0" width="215" height="275" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+          </filter>
+          </defs>
+          </svg>  
+    </section>
+
+      
+      <div class="controls--game">
+        <button  class=controls--game__btn id="on"> 
+          reset / stop
+        </button>
+        <button class="controls--game__btn" id="start">
+          start
+        </button>
+        <input class="strictMode" type="checkbox" class="toggle" id="strict">
       </div>
-      <div class="text1">
-        <span>POWER</span><span>STRICT</span>
-      </div>
-      <div id="turn"></div>
-      <div class="text2">
-        COUNT
-      </div>
-    </div>
-  </div>
+    
+  </main>
 
   <script  src="js/script.js"></script>
 
