@@ -5,9 +5,9 @@ let turn; // keep track of what turn we are on
 let good; // boolean. wheter the player is doing good or not.
 let compTurn; // boolean. keeps track of which players turn it is
 let intervalId; 
-let strict = false; // hard mode
+let strict = true; // hard mode
 let noise = true; // basically lets sound play if true.
-let on = false; // power button for game
+let on = true; // power button for game
 let win; // tells u if u win the game
 
 // querySelector lets you take any CSS element and inject it in to your js code.
@@ -40,19 +40,27 @@ strictButton.addEventListener('change', (event) => {
 
 // ON button
 onButton.addEventListener('click', (event) => {
-    if (onButton.checked == true) {
-        on = true;
-        // emulates turning on a hardware Simons Game. 
-        // I.e adds a dash in the turn counter below the start button.
-        turnCounter.innerHTML = "-";
+    if (on) {
+      on == false;
+      turnCounter.innerHTML = "";
     } else {
-        // turns off the game.
-        on = false;
-        turnCounter.innerHTML = "";
-        // purges stored data (see functions declared below)
-        clearColor();
-        clearInterval(intervalId);
+      on = true;
+      turnCounter.innerHTML = "--";
+      
     }
+    // if (onButton.checked == true) {
+    //     on = true;
+    //     // emulates turning on a hardware Simons Game. 
+    //     // I.e adds a dash in the turn counter below the start button.
+    //     turnCounter.innerHTML = "-";
+    // } else {
+    //     // turns off the game.
+    //     on = false;
+    //     turnCounter.innerHTML = "";
+    //     // purges stored data (see functions declared below)
+    //     clearColor();
+    //     clearInterval(intervalId);
+    // }
 })
 
 // START button
@@ -124,6 +132,8 @@ function one() {
     }
     noise = true;
     padOne.style.fill = "var(--TL-flash)";
+    padOne.style.stroke = "yellow";
+    padOne.style.strokeWidth = 2;
 }
 
 function two() {
@@ -133,6 +143,8 @@ function two() {
     }
     noise = true;
     padTwo.style.fill = "var(--TR-flash)";
+    padTwo.style.stroke = "yellow";
+    padTwo.style.strokeWidth = 2;
 }
 
 function three() {
@@ -142,6 +154,8 @@ function three() {
     }
     noise = true;
     padThree.style.fill = "var(--BL-flash)";
+    padThree.style.stroke = "yellow";
+    padThree.style.strokeWidth = 2;
 }
 
 function four() {
@@ -151,14 +165,24 @@ function four() {
     }
     noise = true;
     padFour.style.fill = "var(--BR-flash)";
+    padFour.style.stroke = "yellow";
+    padFour.style.strokeWidth = 2;
 }
 
 // this function makes all the colors revert back to its original color.
 function clearColor() {
-  padOne.style.fill = "var(--TL-color)";  
+  padOne.style.fill = "var(--TL-color)";
+  padOne.style.stroke = "none";
+  padOne.style.strokeWidth = 0;  
   padTwo.style.fill = "var(--TR-color";
+  padTwo.style.strokeWidth = 0;
+  padTwo.style.stroke = "none";
   padThree.style.fill = "var(--BL-color)";
+  padThree.style.strokeWidth = 0;
+  padThree.style.stroke = "none";
   padFour.style.fill = "var(--BR-color)";
+  padFour.style.strokeWidth = 0;
+  padFour.style.stroke = "none";
 }
 
 // flash color to pffffffer. this is what causes the boxes to appear as they are blinking.
@@ -247,7 +271,7 @@ function check() {
     // If you miss, do this.
     if (good == false) {
         flashColor();
-        turnCounter.innerHTML = "NO!";
+        turnCounter.innerHTML = "xxx";
         setTimeout(() => {
             turnCounter.innerHTML = turn;
             clearColor();
