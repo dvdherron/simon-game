@@ -103,24 +103,23 @@ main {
  /* stroke: black;
  stroke-width: 8; */
 }
+
+.controls--game {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Helvetica', cursive;
   
-#on {
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 20px;
 }
   
-  .button {
+  .controls--game__btn {
     font-size: 1.5em;
-    background-color: lightgray;
+    background: #5c5151;
+    color: #ffebeb;
+    height: 50px;
+    border: none;
   }
   
-  #switches {
-    position: absolute;
-    font-family: 'Helvetica', cursive;
-    margin-left: 26px;
-    margin-top: 110px;
-  }
+ 
   
   .text2 {
     position: absolute;
