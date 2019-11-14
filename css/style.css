@@ -137,7 +137,7 @@ main {
 .controls--game__btn {
   font-size: 1.5em;
   background: #5c5151;
-  color: #ffebeb;
+  color: white;
   height: 50px;
   border: none;
 }
@@ -146,7 +146,7 @@ main {
   grid-column: 2;
   grid-row: 2;
   background: #888181;
-  color: #ffebeb;
+  color: white;
   font-size: 1.188em;
   height: 30px;
   width: 2rem;
