@@ -113,12 +113,14 @@ main {
 }
   
 #game--pads {
-  margin: 4rem 2rem;
+  margin: 2rem 2rem;
   display: grid;
   grid-template-columns: minmax(30vw,200px) minmax(5ch, 6ch) minmax(30vw,200px);
-  grid-template-rows: auto minmax(3ch, 4ch) auto;
-  gap: 1rem;
+  grid-template-rows: 8rem minmax(3ch, 4ch) 8rem;
+  justify-items: center;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 .pad {
@@ -127,7 +129,7 @@ main {
 }
 
 .controls--game {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-evenly;
 }
@@ -147,7 +149,7 @@ main {
   color: #ffebeb;
   font-size: 1.188em;
   height: 30px;
-  width: auto;
+  width: 2rem;
   border-radius: 1ch;
   font-weight: 592;
   text-align: center;
@@ -206,6 +208,13 @@ svg:nth-of-type(4) {
 @media  screen and (min-width: 450px) {
   .title--game {
     font-size: calc(2em + 2.5vw);
+  }
+
+  .controls--game {
+    margin-top: 4rem;
+  }
+  #game--pads {
+    margin-top: 4rem;
   }
 }
 
